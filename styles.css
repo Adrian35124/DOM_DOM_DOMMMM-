@@ -1,0 +1,22 @@
+.div {
+    background-color: black;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    padding: 50px;
+    margin: 20px;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.id-display {
+    display: none;
+}
+
+.boxes:hover .id-display {
+    color: white;
+    display: block;
+}
