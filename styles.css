@@ -5,9 +5,10 @@
     height: 30px;
     padding: 50px;
     margin: 20px;
+    flex-direction: column;
 }
 
-body {
+.sC {
     display: flex;
     flex-wrap: wrap;
 }

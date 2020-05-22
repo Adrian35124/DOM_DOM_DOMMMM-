@@ -6,10 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   btn.textContent = "Add Square";
   document.body.appendChild(btn);
   btn.addEventListener("click", newDiv);
+    let squareContainer = document.createElement("div");
 
   function newDiv() {
     let div = document.createElement("div");
-    document.body.appendChild(div);
+    squareContainer.appendChild(div);
+    squareContainer.className = "sC"
+    document.body.appendChild(squareContainer);
     div.classList.add("boxes", "div");
     div.setAttribute("id", boxesNum);
     div.addEventListener("click", setRandomColor)
@@ -18,6 +21,24 @@ document.addEventListener("DOMContentLoaded", function () {
     span.innerText = div.id;
     span.classList.add("id-display");
     div.appendChild(span)
+
+    div.addEventListener("dblclick", evenOrOdd);
+
+    function evenOrOdd() {
+        if (div.id % 2 == 0) {
+            if (div.nextElementSibling){
+                div.nextElementSibling.remove();
+            }   else {
+                alert("No Boxes Next!");
+            }
+        }  else if (div.id % 2 == 1) {
+            if (div.previousElementSibling) {
+                div.previousElementSibling.remove(); 
+            } else {
+                alert("No Boxes Before!")
+            }
+        }
+    }
   }
   
   function getRandomColor() {
